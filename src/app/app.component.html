@@ -1,0 +1,46 @@
+<div class="container-fluid headerBackground ">
+  <div class="container">
+    <div class="row">
+      <div class="col  pt-2">
+        <a class="navbar-brand" href="#" style="max-width: 7%;">
+          <img src="../assets/images/logo.png" class="img-fluid">
+        </a>
+        <span class="navbar-brand logoTitle">FitNess Trainer</span>
+      </div>
+
+    </div>
+    <hr>
+  </div>
+
+</div>
+<div class="container bodyBackground">
+  <nav class="navbar navbar-expand-lg navbar-light bgcontainer">
+    <button class="navbar-toggler navbar-toggler-icon" type="button" data-toggle="collapse" data-target="#mynav">
+    </button>
+    <ul id="mynav" class="collapse navbar-collapse navbar-nav mr-auto">
+      <li class="nav-item active">
+        <button class="btn btn-primary m-4 px-4" (click)="landingpage()">Home</button>
+      </li>
+      <li class="nav-item">
+        <button class="btn btn-primary m-4 px-4" (click)="placeAppointment()">Place Appointment</button><br>
+      </li>
+      <li class="nav-item">
+        <button class="btn btn-primary m-4 px-4" (click)="viewAppointment()">View Appointment</button><br>
+      </li>
+      <li class="nav-item">
+        <button class="btn btn-primary m-4 px-4" (click)="contactUspage()">Contact Us</button>
+
+      </li>
+    </ul>
+  </nav>
+</div>
+
+
+<div class="container-fluid ">
+
+
+  <div class=" container my-4 p-4 bgcontainer border">
+    <router-outlet class=" m-4 "></router-outlet>
+  </div>
+
+</div>

@@ -1,0 +1,30 @@
+.h1,.h2,.h3,.h4,.h5,.h6,.h7{
+  font-size: medium;
+  font-weight: bold;
+}
+.formTitle{
+  font-size: large;
+  font-weight: bold;
+}
+.logoTitle{
+  font-size: x-large;
+  font-weight: bold;
+}
+.headerBackground{
+  background-image: linear-gradient(to right, rgba(25, 106, 255, 0), rgb(233, 7, 233));
+}
+body{
+  background-image: linear-gradient(to right top, #0a469f, #4e49b6, #8346c7, #b739cf, #eb12cf);
+}
+.bgcontainer{
+  background: rgba(0, 0, 0, 0.3);
+}
+.table{
+  color: white;
+}
+label{
+  color: white;
+}
+table.table-hover tbody tr:hover {
+ color: #75d4b5; 
+}

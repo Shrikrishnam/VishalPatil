@@ -1,0 +1,34 @@
+<label class="formTitle py-2">Appointments</label>
+<div class="table-responsive bgcontainer">
+
+  <table class="table  table-hover ">
+    <thead>
+      <tr>
+        <th class="h1">Sl NO</th>
+        <th class="h2">Name</th>
+        <th class="h3">Address</th>
+        <th class="h4">City</th>
+        <th class="h5">Package</th>
+        <th class="h6">Trainer Preference</th>
+        <th class="h7">Phone</th>
+
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr *ngFor="let res of data; index as i">
+        <td>{{i+1}}</td>
+        <td>{{res.firstname}} {{res.lastname}}</td>
+        <td>{{res.streetaddress}}</td>
+        <td>{{res.city}}</td>
+        <td>{{res.packages}}</td>
+        <td>{{res.trainerpreference}}</td>
+        <td>{{res.phonenumber}}</td>
+        <td><button class="btn btn-info" (click)="editData(res.id)">Edit</button></td>
+        <td><button class="btn btn-danger" (click)="deleteData(res.id)">Delete</button></td>
+
+      </tr>
+
+    </tbody>
+  </table>
+</div>

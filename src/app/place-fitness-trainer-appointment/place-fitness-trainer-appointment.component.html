@@ -1,0 +1,143 @@
+<div class="container">
+  <form class="form-group" [formGroup]="fitnessForm" (ngSubmit)="onSubmit()">
+    <label class="formTitle py-3">{{formTitle}}</label>
+    <div class="form-group">
+      <label for="exampleInputfirstname">First Name</label>
+      <input type="text" class="form-control" formControlName="firstname" placeholder="First Name" autofocus>
+      <small class="form-text text-danger"
+        *ngIf="fitnessForm.get('firstname').errors && ( fitnessForm.get('firstname').touched || fitnessForm.get('firstname').dirty)">
+        Please enter first name(alphabets only).!
+      </small>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputfirstname">Last Name</label>
+      <input type="text" class="form-control" formControlName="lastname" placeholder="Last Name">
+      <small class="form-text text-danger"
+        *ngIf="fitnessForm.get('lastname').errors && ( fitnessForm.get('lastname').touched || fitnessForm.get('lastname').dirty)">
+        Please enter last name(must contain alphabets only)!
+      </small>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputfirstname">Age</label>
+      <input type="number" class="form-control" formControlName="age" placeholder="age">
+      <small class="form-text text-danger"
+        *ngIf="fitnessForm.get('age').errors && ( fitnessForm.get('age').touched || fitnessForm.get('age').dirty)">age
+        must be in range 18 to 60
+      </small>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputfirstname">Email</label>
+      <input type="email" class="form-control" formControlName="email" placeholder="Email" required>
+      <small class="form-text text-danger"
+        *ngIf="fitnessForm.get('email').errors && ( fitnessForm.get('email').touched || fitnessForm.get('email').dirty)">enter
+        valid email address
+      </small>
+
+    </div>
+    <div class="form-group">
+      <label for="exampleInputfirstname">Phone number</label>
+      <input type="text" class="form-control" formControlName="phonenumber" placeholder="phonenumber">
+      <small class="form-text text-danger"
+        *ngIf="fitnessForm.controls.phonenumber.touched && fitnessForm.controls.phonenumber.errors?.required">
+        Phone Number is required
+      </small>
+    </div>
+    <fieldset>
+      
+      <div class="form-group">
+        <label for="streetaddress">Street Address</label>
+        <input type="text" class="form-control" formControlName="streetaddress" placeholder="streetaddress">
+        <small class="form-text text-danger"
+        *ngIf="fitnessForm.controls.streetaddress.touched && fitnessForm.controls.streetaddress.errors?.required">
+        Street Address is required
+      </small>
+      </div>
+      <div class="form-group">
+        <label for="city">City</label>
+        <input type="text" class="form-control" formControlName="city" placeholder="city">
+        <small class="form-text text-danger"
+        *ngIf="fitnessForm.controls.city.touched && fitnessForm.controls.city.errors?.required">
+        City is required
+      </small>
+      </div>
+      <div class="form-group">
+        <label for="state">state</label>
+        <input type="text" class="form-control" formControlName="state" placeholder="state">
+        <small class="form-text text-danger"
+        *ngIf="fitnessForm.controls.state.touched && fitnessForm.controls.state.errors?.required">
+        state is required
+      </small>
+      </div>
+      <div class="form-group">
+        <label for="country">Country</label>
+        <input type="text" class="form-control" formControlName="country" placeholder="country">
+        <small class="form-text text-danger"
+        *ngIf="fitnessForm.controls.country.touched && fitnessForm.controls.country.errors?.required">
+        country is required
+      </small>
+      </div>
+      <div class="form-group">
+        <label for="pincode">Pincode</label>
+        <input type="text" class="form-control" formControlName="pincode" placeholder="pincode">
+        <small class="form-text text-danger"
+          *ngIf="fitnessForm.get('pincode').errors && ( fitnessForm.get('pincode').touched || fitnessForm.get('pincode').dirty)">pincode
+          is required and
+          must be 6 digits only
+        </small>
+      </div>
+    </fieldset>
+
+    <div class="form-group">
+      <label for="trainerpreference">Trainer preference</label>
+      <select class="form-control" formControlName="trainerpreference">
+        <option value="" disabled selected hidden>Choose Trainer preference</option>
+        <option value="Male Trainer">Male Trainer</option>
+        <option value="Female Trainer">Female Trainer</option>
+        <option value="No Preference">No Preference</option>
+      </select>
+      <small class="form-text text-danger"
+      *ngIf="fitnessForm.controls.trainerpreference.touched && fitnessForm.controls.trainerpreference.errors?.required">
+      Trainer preference is required
+    </small>
+    </div>
+    <div class="form-group">
+      <label for="physiotherapist">physiotherapist required ?</label>
+      <select class="form-control" formControlName="physiotherapist">
+        <option value="" disabled hidden>physiotherapist required ?</option>
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+      <small class="form-text text-danger"
+      *ngIf="fitnessForm.controls.physiotherapist.touched && fitnessForm.controls.physiotherapist.errors?.required">
+      Please select option.
+    </small>
+    </div>
+    <div class="form-group">
+      <label for="packages">select packages</label>
+      <select class="form-control" formControlName="packages">
+        <option value="" disabled hidden>select packages</option>
+        <option value="one_time_assessment">One time Assessment Only</option>
+        <option value="one_week_assessment">One week Assessment</option>
+        <option value="one_month_assessment">One month Assessment</option>
+      </select>
+      <small class="form-text text-danger"
+      *ngIf="fitnessForm.controls.packages.touched && fitnessForm.controls.packages.errors?.required">
+      Please select package
+    </small>
+    </div>
+    <div class="row ">
+      <div class="form-group col-xs-6 mx-3">
+        <label for="exampleInputfirstname">INR</label>
+        <input type="text" class="form-control" formControlName="inr" placeholder="inr">
+      </div>
+      <div class="form-group col-xs-6 mx-3">
+        <label for="exampleInputfirstname">Paisa</label>
+        <input type="text" class="form-control" formControlName="paisa" placeholder="paisa">
+      </div>
+    </div>
+    <input type="submit" class="btn btn-primary" [disabled]="!fitnessForm.valid" />
+  </form>
+
+</div>
